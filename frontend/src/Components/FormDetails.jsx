@@ -39,12 +39,22 @@ const FormDetails = ({ token }) => {
   }, [formId, token]);
 
   const handleFieldChange = (e, index, fieldName) => {
-    const updatedFields = form.fields.map((field, i) =>
-      i === index ? { ...field, [fieldName]: e.target.value } : field
-    );
-    setForm({ ...form, fields: updatedFields });
+    const { value } = e.target;
+  
+    // If it's a 'values' field (dropdown or radio), we need to split by commas
+    if (fieldName === 'values') {
+      const updatedFields = form.fields.map((field, i) =>
+        i === index ? { ...field, [fieldName]: value.split(',').map(v => v.trim()) } : field // Split and trim values
+      );
+      setForm({ ...form, fields: updatedFields });
+    } else {
+      const updatedFields = form.fields.map((field, i) =>
+        i === index ? { ...field, [fieldName]: value } : field
+      );
+      setForm({ ...form, fields: updatedFields });
+    }
   };
-
+  
   const addField = () => {
     setForm({
       ...form,
