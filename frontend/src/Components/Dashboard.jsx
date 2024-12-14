@@ -38,14 +38,14 @@ const Dashboard = ({ token }) => {
             try {
               // Fetch the form link for each form
               const linkResponse = await axios.get(
-                `https://formee.onrender.com/forms/${form._id}/link`,
+                `https://formee.onrender.com/forms/api/${form._id}/link`,
                 { headers: { Authorization: `Bearer ${token}` } }
               );
               const link = linkResponse.data?.[0]?.link || null;
 
               // Fetch the submission count
               const submissionResponse = await axios.get(
-                `https://formee.onrender.com/submissions/${form._id}`,
+                `https://formee.onrender.com/submissions/api/${form._id}`,
                 { headers: { Authorization: `Bearer ${token}` } }
               );
               const submissionCount = submissionResponse.data.length;
