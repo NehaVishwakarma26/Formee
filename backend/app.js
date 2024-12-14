@@ -15,11 +15,11 @@ const app = express();
 app.use(bodyParser.json());
 
 // Enable CORS
-const allowedOrigins = ['http://localhost:3000','https://formeeformbuilder.netlify.app/']; // Add your frontend's URL here
+const allowedOrigins = ['http://localhost:3000', 'https://formeeformbuilder.netlify.app']; // Add your frontend's URL here
 
 const corsOptions = {
   origin: (origin, callback) => {
-    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true); // Allow the request
     } else {
       callback(new Error('Not allowed by CORS')); // Block the request
@@ -40,7 +40,6 @@ app.use('/api/forms', formRoutes); // Form routes under /api/forms
 app.use('/api/submissions', submissionRoutes); // Submission routes under /api/submissions
 app.use('/api/links', linkRoutes); // Link routes under /api/links
 
-
 // Basic route
 app.get('/', (req, res) => {
   res.send('Form Builder API');
@@ -51,6 +50,5 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
 
 module.exports = app;
