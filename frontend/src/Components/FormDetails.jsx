@@ -9,8 +9,8 @@ import {
   FormLabel,
   Select,
   Flex,
-  SimpleGrid,
   Checkbox,
+  SimpleGrid,
 } from '@chakra-ui/react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -21,6 +21,7 @@ const FormDetails = ({ token }) => {
   const [form, setForm] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
 
+  // Fetch form details on page load
   useEffect(() => {
     const fetchFormDetails = async () => {
       try {
@@ -38,10 +39,11 @@ const FormDetails = ({ token }) => {
     }
   }, [formId, token]);
 
+  // Handle field changes (for text, radio, select, etc.)
   const handleFieldChange = (e, index, fieldName) => {
     const { value } = e.target;
-  
-    // If it's a 'values' field (dropdown or radio), we need to split by commas
+
+    // Handle 'values' field (comma separated for radio/select)
     if (fieldName === 'values') {
       const updatedFields = form.fields.map((field, i) =>
         i === index ? { ...field, [fieldName]: value.split(',').map(v => v.trim()) } : field // Split and trim values
@@ -54,7 +56,8 @@ const FormDetails = ({ token }) => {
       setForm({ ...form, fields: updatedFields });
     }
   };
-  
+
+  // Add new field to the form
   const addField = () => {
     setForm({
       ...form,
@@ -65,11 +68,13 @@ const FormDetails = ({ token }) => {
     });
   };
 
+  // Remove a field from the form
   const removeField = (index) => {
     const updatedFields = form.fields.filter((_, i) => i !== index);
     setForm({ ...form, fields: updatedFields });
   };
 
+  // Save form changes to the database
   const saveChanges = async () => {
     try {
       await axios.put(
@@ -85,6 +90,7 @@ const FormDetails = ({ token }) => {
     }
   };
 
+  // Loading state when form is not yet loaded
   if (!form) {
     return (
       <Box maxW="md" mx="auto" mt="10" p="4" boxShadow="md" borderRadius="md" bg="gray.50">
@@ -93,7 +99,7 @@ const FormDetails = ({ token }) => {
     );
   }
 
-  // Count types of fields
+  // Count the number of field types in the form
   const fieldTypesCount = form.fields.reduce(
     (acc, field) => {
       acc[field.type] = (acc[field.type] || 0) + 1;
@@ -110,7 +116,7 @@ const FormDetails = ({ token }) => {
           Forming your future, one submission at a time!
         </Text>
 
-        {/* Edit and View Submissions Button */}
+        {/* Edit and View Submissions Buttons */}
         <Flex gap="6">
           <Button
             onClick={isEditing ? saveChanges : () => setIsEditing(true)}
@@ -185,15 +191,13 @@ const FormDetails = ({ token }) => {
                     <option value="number">Number</option>
                   </Select>
                 </FormControl>
-                {field.type !== 'checkbox' && field.type !== 'text' && field.type !== 'number' && (
+                {(field.type === 'select' || field.type === 'radio') && (
                   <FormControl mb="2">
                     <FormLabel>Field Values (Comma separated)</FormLabel>
                     <Input
                       type="text"
                       value={field.values ? field.values.join(', ') : ''}
-                      onChange={(e) =>
-                        handleFieldChange(e, index, 'values')
-                      }
+                      onChange={(e) => handleFieldChange(e, index, 'values')}
                       disabled={!isEditing}
                     />
                   </FormControl>
