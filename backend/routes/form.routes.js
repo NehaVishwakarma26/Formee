@@ -48,12 +48,27 @@ router.get('/:id', async (req, res) => {
 
 
 // Update a form by ID
+// Update a form by ID
 router.put('/:id', authenticate, async (req, res) => {
   const { id } = req.params;
   const { title, description, fields } = req.body;
 
   try {
-    const updatedForm = await Form.findByIdAndUpdate(id, { title, description, fields }, { new: true });
+    // Ensure values are converted to arrays for radio/select fields before updating
+    const processedFields = fields.map(field => {
+      if (field.type === 'radio' || field.type === 'select') {
+        // Convert comma-separated string to array if it's not already an array
+        return {
+          ...field,
+          values: field.values ? field.values.split(',').map(val => val.trim()) : [],
+        };
+      }
+      return field;
+    });
+
+    // Update the form with the processed fields
+    const updatedForm = await Form.findByIdAndUpdate(id, { title, description, fields: processedFields }, { new: true });
+
     if (!updatedForm) {
       return res.status(404).json({ message: 'Form not found' });
     }
