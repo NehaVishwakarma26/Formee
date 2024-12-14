@@ -30,7 +30,7 @@ const FormInteraction = () => {
   useEffect(() => {
     const fetchFormDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/forms/${formId}`);
+        const response = await axios.get(`https://formee.onrender.com/api/forms/${formId}`);
         console.log('Fetched form:', response.data);
         setForm(response.data); // Save form details in state
       } catch (error) {
@@ -67,7 +67,7 @@ const FormInteraction = () => {
     try {
       // Submit form responses to the correct route (no token needed)
       await axios.post(
-        `http://localhost:5000/api/submissions/${formId}`, // Correct route for submissions
+        `https://formee.onrender.com/api/submissions/${formId}`, // Correct route for submissions
         { data: responses }
       );
 

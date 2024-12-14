@@ -24,7 +24,7 @@ const FormDetails = ({ token }) => {
   useEffect(() => {
     const fetchFormDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/forms/${formId}`, {
+        const response = await axios.get(`https://formee.onrender.com/api/forms/${formId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setForm(response.data);
@@ -63,7 +63,7 @@ const FormDetails = ({ token }) => {
   const saveChanges = async () => {
     try {
       await axios.put(
-        `http://localhost:5000/api/forms/${formId}`,
+        `https://formee.onrender.com/api/forms/${formId}`,
         { title: form.title, description: form.description, fields: form.fields },
         {
           headers: { Authorization: `Bearer ${token}` },

@@ -16,7 +16,7 @@ const FormSubmissions = ({ token }) => {
       }
 
       try {
-        const response = await axios.get(`http://localhost:5000/api/submissions/${formId}`, {
+        const response = await axios.get(`https://formee.onrender.com/api/submissions/${formId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setSubmissions(response.data);

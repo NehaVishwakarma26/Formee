@@ -82,7 +82,7 @@ const CreateForm = ({ token }) => {
     };
 
     try {
-      const response = await axios.post('http://localhost:5000/api/forms', formData, {
+      const response = await axios.post('https://formee.onrender.com/api/forms', formData, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -90,7 +90,7 @@ const CreateForm = ({ token }) => {
 
       // Generate a link for the created form
       const linkResponse = await axios.post(
-        `http://localhost:5000/api/forms/${formId}/link`,
+        `https://formee.onrender.com/api/forms/${formId}/link`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },

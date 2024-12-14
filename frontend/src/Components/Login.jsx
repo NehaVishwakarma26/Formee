@@ -13,7 +13,7 @@ const Login = ({ setToken }) => {
     e.preventDefault();
     
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+      const response = await axios.post('https://formee.onrender.com/api/auth/login', { email, password });
       setToken(response.data.token); // Save the token in the parent component's state
       setError(''); // Clear any previous error
 

@@ -13,7 +13,7 @@ const Register = ({ setToken }) => {  // Accept setToken as a prop
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/register', { name, email, password });
+      const response = await axios.post('https://formee.onrender.com/api/auth/register', { name, email, password });
       console.log('Registration Success:', response.data); // Log the response from backend
 
       // Check if the token is received

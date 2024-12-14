@@ -29,7 +29,7 @@ const Dashboard = ({ token }) => {
   useEffect(() => {
     const fetchFormsAndLinks = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/forms', {
+        const response = await axios.get('https://formee.onrender.com/api/forms', {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -38,14 +38,14 @@ const Dashboard = ({ token }) => {
             try {
               // Fetch the form link for each form
               const linkResponse = await axios.get(
-                `http://localhost:5000/api/forms/${form._id}/link`,
+                `https://formee.onrender.com/forms/${form._id}/link`,
                 { headers: { Authorization: `Bearer ${token}` } }
               );
               const link = linkResponse.data?.[0]?.link || null;
 
               // Fetch the submission count
               const submissionResponse = await axios.get(
-                `http://localhost:5000/api/submissions/${form._id}`,
+                `https://formee.onrender.com/submissions/${form._id}`,
                 { headers: { Authorization: `Bearer ${token}` } }
               );
               const submissionCount = submissionResponse.data.length;
@@ -73,7 +73,7 @@ const Dashboard = ({ token }) => {
 
   const handleDeleteForm = async (formId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/forms/${formId}`, {
+      await axios.delete(`https://formee.onrender.com/api/forms/${formId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setForms((prevForms) => prevForms.filter((form) => form._id !== formId));
