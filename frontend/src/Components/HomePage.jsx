@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Flex, Button, Text, Heading, VStack, Container, Image, SimpleGrid, Icon, Link, HStack} from '@chakra-ui/react';
 import { FaCheckCircle, FaShareAlt, FaFileAlt } from 'react-icons/fa'; // Icons for steps
-
+import mainImg from '../assets/images/logo.png'
 const HeroSection = () => {
   return (
     <Box bg="blue.600" color="white" py={20}>
@@ -18,7 +18,7 @@ const HeroSection = () => {
               Create Your First Form
             </Button>
           </VStack>
-          <Image src="https://via.placeholder.com/500" alt="App screenshot" boxSize="500px" borderRadius="lg" />
+          <Image src={mainImg} alt="App screenshot" boxSize="500px" borderRadius="lg" />
         </Flex>
       </Container>
     </Box>

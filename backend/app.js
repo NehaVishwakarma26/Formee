@@ -40,6 +40,7 @@ app.use('/api/forms', formRoutes); // Form routes under /api/forms
 app.use('/api/submissions', submissionRoutes); // Submission routes under /api/submissions
 app.use('/api/links', linkRoutes); // Link routes under /api/links
 
+
 // Basic route
 app.get('/', (req, res) => {
   res.send('Form Builder API');
