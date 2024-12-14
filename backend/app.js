@@ -1,4 +1,4 @@
-require('dotenv').config(); // Load environment variables 
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors'); // Import the cors package
@@ -25,11 +25,14 @@ const corsOptions = {
       callback(new Error('Not allowed by CORS')); // Block the request
     }
   },
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   credentials: true, // Allow cookies to be sent
 };
 
 app.use(cors(corsOptions)); // Use CORS middleware with options
+
+// Handle preflight OPTIONS requests
+app.options('*', cors(corsOptions)); // Allow preflight requests
 
 // Connect to MongoDB
 connectDB();
