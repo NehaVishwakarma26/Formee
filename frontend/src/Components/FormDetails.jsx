@@ -42,11 +42,16 @@ const FormDetails = ({ token }) => {
   // Handle field changes (for text, radio, select, etc.)
   const handleFieldChange = (e, index, fieldName) => {
     const { value } = e.target;
-
-    // Handle 'values' field (comma separated for radio/select)
+  
+    // If it's a 'values' field (for dropdown or radio), we need to split by commas
     if (fieldName === 'values') {
       const updatedFields = form.fields.map((field, i) =>
-        i === index ? { ...field, [fieldName]: value.split(',').map(v => v.trim()) } : field // Split and trim values
+        i === index
+          ? {
+              ...field,
+              [fieldName]: value.split(',').map(v => v.trim()) // Split and trim values
+            }
+          : field
       );
       setForm({ ...form, fields: updatedFields });
     } else {
@@ -56,6 +61,7 @@ const FormDetails = ({ token }) => {
       setForm({ ...form, fields: updatedFields });
     }
   };
+  
 
   // Add new field to the form
   const addField = () => {
