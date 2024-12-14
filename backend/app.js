@@ -15,7 +15,7 @@ const app = express();
 app.use(bodyParser.json());
 
 // Enable CORS
-const allowedOrigins = ['http://localhost:3000']; // Add your frontend's URL here
+const allowedOrigins = ['http://localhost:3000','https://formeeformbuilder.netlify.app/']; // Add your frontend's URL here
 
 const corsOptions = {
   origin: (origin, callback) => {

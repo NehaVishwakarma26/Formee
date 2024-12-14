@@ -17,7 +17,7 @@ router.post('/', authenticate, async (req, res) => {
     }
 
     // Generate a unique link (you can use UUID or any unique string generation method)
-   const link = `http://localhost:3000/form/${uuidv4()}` ;
+   const link = `https://formeeformbuilder.netlify.app/form/${uuidv4()}` ;
 
     // Create a new Link
     const newLink = new Link({

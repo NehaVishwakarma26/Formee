@@ -87,7 +87,7 @@ router.post('/:formId/link', authenticate, async (req, res) => {
       return res.status(404).json({ message: 'Form not found' });
     }
 
-    const link = `http://localhost:3000/form/${formId}`; // Point to frontend URL
+    const link = `https://formeeformbuilder.netlify.app/form/${formId}`; // Point to frontend URL
 
     const newLink = new Link({
       formId,
