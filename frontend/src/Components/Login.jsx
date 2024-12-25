@@ -39,12 +39,13 @@ const Login = ({ setToken }) => {
       bg="white"
       boxShadow="xl"
       borderWidth="1px"
+      fontFamily="Poppins"
     >
       <VStack spacing={6} align="center">
         <Text fontSize="3xl" fontWeight="bold" color="blue.600">
           Formee Login
         </Text>
-
+<Text fontFamily="Poppins">Hey! Enter your details to sign in to your account</Text>
         {/* Form Section */}
         <Box width="100%" maxW="lg" p={6} borderRadius="md" boxShadow="sm">
           <form onSubmit={handleLogin}>
@@ -109,7 +110,7 @@ const Login = ({ setToken }) => {
         {/* Register Link */}
         <Text fontSize="sm" color="gray.600">
           Don't have an account?{' '}
-          <Link color="blue.500" onClick={goToRegister} style={{ cursor: 'pointer', textDecoration: 'underline' }}>
+          <Link color="black.500" fontWeight="bold"  onClick={goToRegister} style={{ cursor: 'pointer', textDecoration: 'none' }}>
             Register here
           </Link>
         </Text>

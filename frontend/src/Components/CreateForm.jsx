@@ -113,28 +113,28 @@ const CreateForm = ({ token }) => {
   return (
     <HStack spacing={4} justify="space-between" align="start" minH="100vh" p="4">
       {/* Left Section - Form Fields Buttons */}
-      <Box w="20%" position="sticky" top="10" align="start">
+      <Box w="20%" position="sticky" top="10" align="start" fontFamily="Poppins">
         <VStack spacing={4} align="stretch">
           <Button leftIcon={<AddIcon />} onClick={() => addField('text')} colorScheme="blue" width="full">
-            Add Text Field
+           Text Field
           </Button>
           <Button leftIcon={<AddIcon />} onClick={() => addField('number')} colorScheme="blue" width="full">
-            Add Number Field
+           Number Field
           </Button>
           <Button leftIcon={<AddIcon />} onClick={() => addField('date')} colorScheme="blue" width="full">
-            Add Date Picker
+            Date Picker
           </Button>
           <Button leftIcon={<AddIcon />} onClick={() => addField('select')} colorScheme="blue" width="full">
-            Add Dropdown
+             Dropdown
           </Button>
           <Button leftIcon={<AddIcon />} onClick={() => addField('radio')} colorScheme="blue" width="full">
-            Add Radio Buttons
+            Radio Buttons
           </Button>
         </VStack>
       </Box>
 
       {/* Center Section - Form Fields */}
-      <Box w="60%" overflowY="auto" p="4" borderRadius="md" boxShadow="md" bg="white">
+      <Box w="60%" overflowY="auto" p="4" borderRadius="md" boxShadow="md" bg="white" fontFamily="Poppins">
         <Text fontSize="2xl" mb="4" textAlign="center" fontWeight="bold">
           Create New Form
         </Text>

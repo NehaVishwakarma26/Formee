@@ -4,21 +4,21 @@ import { FaCheckCircle, FaShareAlt, FaFileAlt } from 'react-icons/fa'; // Icons 
 import mainImg from '../assets/images/logo.png'
 const HeroSection = () => {
   return (
-    <Box bg="blue.600" color="white" py={20}>
+    <Box bg="blue.600" color="white" py={20} fontFamily="Poppins,sans-serif">
       <Container maxW="container.xl">
         <Flex direction={{ base: 'column', md: 'row' }} justify="space-between" align="center">
-          <VStack align="start" spacing={4} maxW="lg">
-            <Heading as="h2" size="2xl" fontWeight="bold">
+          <VStack align="start" spacing={4} maxW="lg" >
+            <Heading as="h2" size="2xl" fontWeight="bold" fontFamily="Poppins,sans-serif" mb={4}>
               Create, Share, and Manage Forms with Ease
             </Heading>
-            <Text fontSize="lg">
+            <Text fontSize="lg" color="whiteAlpha.800">
               Formee makes it easy to create customizable forms, collect data, and analyze submissions in real-time.
             </Text>
-            <Button backgroundColor="#89A8B2" color="white" size="lg" mt={6} as="a" href="/login">
+            <Button mb="4" backgroundColor="#89A8B2" color="white" size="lg" mt={6} as="a" href="/login">
               Create Your First Form
             </Button>
           </VStack>
-          <Image src={mainImg} alt="App screenshot" boxSize="500px" borderRadius="lg" />
+          <Image src={mainImg} alt="App screenshot" boxSize="30em" borderRadius="lg" />
         </Flex>
       </Container>
     </Box>
@@ -27,11 +27,12 @@ const HeroSection = () => {
 
 const StepsSection = () => {
   return (
-    <Box py={24}>
+    <Box py={24} fontFamily="Poppins" >
       <Container maxW="container.xl">
-        <Heading as="h3" size="2xl" textAlign="center" mb={10}>
+        <Heading as="h3" size="2xl" textAlign="center" mb={8} fontFamily="Poppins">
           How to Create and Share a Form
         </Heading>
+      
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={20} pt={20}>
           <VStack align="start" spacing={4} textAlign="center" backgroundColor="#F1F0E8" padding={10} borderRadius="1em">
             <Icon as={FaFileAlt} w={10} h={10} color="blue.600" />
@@ -62,9 +63,9 @@ const StepsSection = () => {
 
 const FeaturesSection = () => {
     return (
-      <Box bg="gray.50" py={20}>
+      <Box bg="gray.50" py={20} fontFamily="Poppins">
         <Container maxW="container.xl">
-          <Heading as="h3" size="2xl" textAlign="center" mb={12}>
+          <Heading as="h3" size="2xl" textAlign="center" mb={12} fontFamily="Poppins">
             Key Features of Formee
           </Heading>
   
@@ -92,7 +93,7 @@ const FeaturesSection = () => {
               </Box>
               <Box flex="1">
                 <Heading size="lg" textAlign="left" bg="#C9E6F0" color="gray.700" p={6} borderRadius="lg" boxShadow="lg">
-                  Real-Time Analytics
+                Analytics
                 </Heading>
               </Box>
             </HStack>

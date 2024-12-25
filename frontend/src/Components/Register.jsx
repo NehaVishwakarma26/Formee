@@ -33,8 +33,18 @@ const Register = ({ setToken }) => {  // Accept setToken as a prop
   };
 
   return (
-    <Box maxW="md" mx="auto" mt="10" p="4" boxShadow="md" borderRadius="md" bg="gray.50">
-      <Text fontSize="2xl" mb="6" textAlign="center" fontWeight="bold">Register</Text>
+    <Box maxW="lg"
+    mx="auto"
+    mt="10"
+    p={{ base: '6', md: '10' }}
+    borderRadius="xl"
+    bg="white"
+    boxShadow="xl"
+    borderWidth="1px"
+    fontFamily="Poppins">
+      <Text fontSize="3xl" fontWeight="bold" color="blue.600" align="center" mb={6}>Register</Text>
+      <Text fontFamily="Poppins" align="center" mb={6}>Hey! Enter your details to create your account</Text>
+      
       <form onSubmit={handleRegister}>
         <Box mb="4">
           <Text mb="2" fontWeight="medium">Name</Text>

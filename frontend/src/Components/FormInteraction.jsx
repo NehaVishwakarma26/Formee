@@ -26,6 +26,8 @@ const FormInteraction = () => {
   const [error, setError] = useState('');
   const [formError, setFormError] = useState('');
 
+
+
   // Fetch form details on component load
   useEffect(() => {
     const fetchFormDetails = async () => {
@@ -142,7 +144,7 @@ const FormInteraction = () => {
               )}
             </FormControl>
           ))}
-          <Button type="submit" colorScheme="blue" width="full" mt="4">
+          <Button type="submit" colorScheme="blue" width="full" mt="4" >
             Submit
           </Button>
         </VStack>

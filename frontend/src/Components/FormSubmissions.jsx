@@ -29,9 +29,18 @@ const FormSubmissions = ({ token }) => {
     fetchSubmissions();
   }, [formId, token]);
 
+
+function downloadCSV()
+{
+  console.log(submissions);
+}
+
   return (
     <Box maxW="4xl" mx="auto" mt="10" p="6" boxShadow="lg" borderRadius="lg" bg="white">
-      <Text fontSize="2xl" mb="4" textAlign="center" fontWeight="bold">Form Submissions</Text>
+ <Flex justifyContent="space-between" alignItems="center" mb="4">
+  <Text fontSize="2xl" fontWeight="bold">Form Submissions</Text>
+  <Button size="lg" onClick={downloadCSV}>Download data</Button>
+</Flex>
 
       {error && <Text color="red.500" mb="4">{error}</Text>}
 

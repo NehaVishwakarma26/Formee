@@ -270,7 +270,7 @@ const FormDetails = ({ token }) => {
           </VStack>
 
           {/* Display Fields */}
-          <Text fontWeight="bold" mt="4" mb="3">Fields:</Text>
+          {/* <Text fontWeight="bold" mt="4" mb="3">Fields:</Text>
           {form.fields.map((field, index) => (
             <Box key={index} mb="1">
               <Text>{field.label}</Text>
@@ -279,7 +279,7 @@ const FormDetails = ({ token }) => {
                 <Text>{`Values: ${field.values ? field.values.join(', ') : 'No values specified'}`}</Text>
               ) : null}
             </Box>
-          ))}
+          ))} */}
         </Box>
       </Flex>
     </Flex>

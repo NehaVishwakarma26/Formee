@@ -19,13 +19,22 @@ function HomeHeader() {
 
       {/* Navigation Section */}
       <Box>
+
+      <Link onClick={() => handleNavigation('/')}>
+          <Button colorScheme="blue" variant="link" mr={4}>
+            Home
+          </Button>
+        </Link>
+
         <Link onClick={() => handleNavigation('/register')}>
           <Button colorScheme="blue" variant="link" mr={4}>
             Sign Up
           </Button>
         </Link>
+
+        
         <Link onClick={() => handleNavigation('/login')}>
-          <Button colorScheme="blue" variant="link">
+          <Button colorScheme="blue" variant="solid">
             Log In
           </Button>
         </Link>
