@@ -61,8 +61,8 @@ const FormSubmissions = ({ token }) => {
   }
   
   return (
-    <Box maxW="4xl" mx="auto" mt="10" p="6" boxShadow="lg" borderRadius="lg" bg="white">
- <Flex justifyContent="space-between" alignItems="center" mb="4">
+    <Box maxW="4xl" mx="auto" mt="10" p="6" boxShadow="lg" borderRadius="lg" bg="white" fontFamily="Poppins">
+ <Flex justifyContent="space-between" alignItems="center" mb="4" fontFamily="Poppins" >
   <Text fontSize="2xl" fontWeight="bold">Form Submissions</Text>
   <Button size="lg" onClick={downloadCSV} colorScheme="blue">Download data</Button>
 </Flex>
