@@ -111,7 +111,7 @@ const Dashboard = ({ token }) => {
           Forming your future, one submission at a time!
         </Text>
         {/* Align Create Form Button on the right */}
-        <Button 
+        {/* <Button 
   onClick={() => navigate('/create-form')} 
   colorScheme="blue"
   fontSize={{ base: "xs", md: "sm" }} 
@@ -120,7 +120,18 @@ const Dashboard = ({ token }) => {
   textOverflow="ellipsis" 
 >
   Create Form
-</Button>
+</Button> */}
+
+<Button
+    onClick={() => navigate('/create-form')} 
+    colorScheme="blue"
+    fontSize={{ base: "10px", md: "sm", lg: "md" }}
+    px={{ base: 4, md: 6, lg: 8 }}
+    py={{ base: 2, md: 3 }}
+    whiteSpace="normal"
+    textAlign="center"
+  >
+Create New Form  </Button>
 
       </Flex>
 
