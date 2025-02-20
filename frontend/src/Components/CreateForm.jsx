@@ -114,58 +114,78 @@ const CreateForm = ({ token }) => {
     <HStack spacing={4} justify="space-between" align="start" minH="100vh" p="4">
       {/* Left Section - Form Fields Buttons */}
       <Box w="20%" position="sticky" top="10" align="start" fontFamily="Poppins">
-        <VStack spacing={4} align="stretch">
-        <Button
-  leftIcon={<AddIcon />}
-  onClick={() => addField('text')}
-  colorScheme="blue"
-  width="full"
-  fontSize={{ base: "xs", md: "sm", lg: "md" }} // Smaller font on small screens
-  px={{ base: 6, md: 8, lg: 10 }} // Increase padding for small screens
-  py={{ base: 2, md: 3 }} // Increase padding vertically
->           Text 
-          </Button>
-          <Button
-  leftIcon={<AddIcon />}
-  onClick={() => addField('number')}
-  colorScheme="blue"
-  width="full"
-  fontSize={{ base: "xs", md: "sm", lg: "md" }} // Smaller font on small screens
-  px={{ base: 6, md: 8, lg: 10 }} // Increase padding for small screens
-  py={{ base: 2, md: 3 }} // Increase padding vertically
->           Number
-          </Button>
-          <Button
-  leftIcon={<AddIcon />}
-  onClick={() => addField('date')}
-  colorScheme="blue"
-  width="full"
-  fontSize={{ base: "10px", md: "sm", lg: "md" }} // Smaller font on small screens
-  px={{ base: 6, md: 8, lg: 10 }} // Increase padding for small screens
-  py={{ base: 2, md: 3 }} // Increase padding vertically
->            Date Picker
-          </Button>
-          <Button
-  leftIcon={<AddIcon />}
-  onClick={() => addField('select')}
-  colorScheme="blue"
-  width="full"
-  fontSize={{ base: "xs", md: "sm", lg: "md" }} // Smaller font on small screens
-  px={{ base: 6, md: 8, lg: 10 }} // Increase padding for small screens
-  py={{ base: 2, md: 3 }} // Increase padding vertically
->             Dropdown
-          </Button>
-          <Button
-  leftIcon={<AddIcon />}
-  onClick={() => addField('radio')}
-  colorScheme="blue"
-  width="full"
-  fontSize={{ base: "10px", md: "sm", lg: "md" }} // Smaller font on small screens
-  px={{ base: 6, md: 8, lg: 10 }} // Increase padding for small screens
-  py={{ base: 2, md: 3 }} // Increase padding vertically
->            Radio Button
-          </Button>
-        </VStack>
+      <VStack spacing={4} align="stretch" width="full">
+  <Button
+    leftIcon={<AddIcon />}
+    onClick={() => addField('text')}
+    colorScheme="blue"
+    width="full"
+    fontSize={{ base: "10px", md: "sm", lg: "md" }} // Smaller font on small screens
+    px={{ base: 4, md: 6, lg: 8 }} // Adjust padding based on screen size
+    py={{ base: 2, md: 3 }} 
+    whiteSpace="normal" // Allow text to wrap
+    textAlign="center" // Center text properly
+  >
+    Text Field
+  </Button>
+
+  <Button
+    leftIcon={<AddIcon />}
+    onClick={() => addField('number')}
+    colorScheme="blue"
+    width="full"
+    fontSize={{ base: "10px", md: "sm", lg: "md" }}
+    px={{ base: 4, md: 6, lg: 8 }}
+    py={{ base: 2, md: 3 }}
+    whiteSpace="normal"
+    textAlign="center"
+  >
+    Number Field
+  </Button>
+
+  <Button
+    leftIcon={<AddIcon />}
+    onClick={() => addField('date')}
+    colorScheme="blue"
+    width="full"
+    fontSize={{ base: "10px", md: "sm", lg: "md" }}
+    px={{ base: 4, md: 6, lg: 8 }}
+    py={{ base: 2, md: 3 }}
+    whiteSpace="normal"
+    textAlign="center"
+  >
+    Date Picker
+  </Button>
+
+  <Button
+    leftIcon={<AddIcon />}
+    onClick={() => addField('select')}
+    colorScheme="blue"
+    width="full"
+    fontSize={{ base: "10px", md: "sm", lg: "md" }}
+    px={{ base: 4, md: 6, lg: 8 }}
+    py={{ base: 2, md: 3 }}
+    whiteSpace="normal"
+    textAlign="center"
+  >
+    Dropdown
+  </Button>
+
+  <Button
+    leftIcon={<AddIcon />}
+    onClick={() => addField('radio')}
+    colorScheme="blue"
+    width="full"
+    fontSize={{ base: "10px", md: "sm", lg: "md" }}
+    px={{ base: 4, md: 6, lg: 8 }}
+    py={{ base: 2, md: 3 }}
+    whiteSpace="normal"
+    textAlign="center"
+  >
+    Radio Button
+  </Button>
+</VStack>
+
       </Box>
 
       {/* Center Section - Form Fields */}
