@@ -16,31 +16,24 @@ function Header() {
       p={4} 
       boxShadow="0 4px 6px rgba(0, 0, 0, 0.1)" 
       align="center"
-      flexDirection={{ base: "column", md: "row" }} // Stack items on small screens
-      textAlign="center"
     >
       {/* Logo */}
       <Heading 
         as="h1" 
-        fontSize={{ base: "2xl", md: "3xl" }} // Smaller on mobile, bigger on desktop
+        fontSize={{ base: "xl", md: "2xl", lg: "3xl" }} // Decrease size on smaller screens
         fontWeight="bold" 
         color="black"
       >
         <span style={{ color: '#003366' }}>F</span>ormee
       </Heading>
 
-      <Spacer display={{ base: "none", md: "flex" }} /> {/* Hide spacer on mobile */}
+      <Spacer />
 
       {/* Navbar Links */}
-      <Flex 
-        gap={4} 
-        align="center"
-        flexDirection={{ base: "column", md: "row" }} // Stack links on mobile
-        mt={{ base: 2, md: 0 }} // Add space only on small screens
-      >
+      <Flex gap={4} align="center">
         <Link
           fontWeight="medium"
-          fontSize={{ base: "lg", md: "md" }} // Larger text on mobile
+          fontSize={{ base: "sm", md: "md" }} // Smaller text on mobile
           _hover={{ textDecoration: 'underline', color: '#003366' }}
           onClick={() => navigate('/dashboard')}
         >
@@ -48,7 +41,7 @@ function Header() {
         </Link>
         <Link
           fontWeight="medium"
-          fontSize={{ base: "lg", md: "md" }} // Larger text on mobile
+          fontSize={{ base: "sm", md: "md" }} // Smaller text on mobile
           _hover={{ textDecoration: 'underline', color: '#003366' }}
           onClick={() => navigate('/create-form')}
         >
@@ -56,7 +49,8 @@ function Header() {
         </Link>
         <Button
           colorScheme="blue"
-          size={{ base: "md", md: "sm" }} // Slightly bigger button on mobile
+          size="sm"
+          fontSize={{ base: "xs", md: "sm" }} // Reduce button text size on mobile
           onClick={handleLogout}
           _hover={{ bg: '#003366' }}
         >
