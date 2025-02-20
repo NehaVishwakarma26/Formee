@@ -21,9 +21,9 @@ const HeroSection = () => {
           <Image 
   src={mainImg} 
   alt="App screenshot" 
-  boxSize={{ base: "15em", md: "25em", lg: "30em" }} 
+  boxSize={{ base: "23em", md: "25em", lg: "30em" }} 
   borderRadius="lg"
-  ml={{ base: "10px", md: "0", lg: "0" }} 
+  ml={{ base: "4px", md: "0", lg: "0" }} 
   alignSelf={{ base: "flex-start", md: "center" }} 
 />
 
