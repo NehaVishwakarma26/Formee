@@ -10,35 +10,53 @@ function Header() {
   };
 
   return (
-    <Flex as="header" bg="white" p={4} boxShadow="0 4px 6px rgba(0, 0, 0, 0.1)" align="center">
+    <Flex 
+      as="header" 
+      bg="white" 
+      p={4} 
+      boxShadow="0 4px 6px rgba(0, 0, 0, 0.1)" 
+      align="center"
+      flexDirection={{ base: "column", md: "row" }} // Stack items on small screens
+      textAlign="center"
+    >
       {/* Logo */}
-      <Heading as="h1" fontSize="3xl" fontWeight="bold" color="black">
+      <Heading 
+        as="h1" 
+        fontSize={{ base: "2xl", md: "3xl" }} // Smaller on mobile, bigger on desktop
+        fontWeight="bold" 
+        color="black"
+      >
         <span style={{ color: '#003366' }}>F</span>ormee
       </Heading>
 
-      <Spacer />
+      <Spacer display={{ base: "none", md: "flex" }} /> {/* Hide spacer on mobile */}
 
       {/* Navbar Links */}
-      <Flex gap={4} align="center">
+      <Flex 
+        gap={4} 
+        align="center"
+        flexDirection={{ base: "column", md: "row" }} // Stack links on mobile
+        mt={{ base: 2, md: 0 }} // Add space only on small screens
+      >
         <Link
           fontWeight="medium"
-          fontSize="md"
+          fontSize={{ base: "lg", md: "md" }} // Larger text on mobile
           _hover={{ textDecoration: 'underline', color: '#003366' }}
           onClick={() => navigate('/dashboard')}
         >
-          Dashboard {/* Reduced font size */}
+          Dashboard
         </Link>
         <Link
           fontWeight="medium"
-          fontSize="md"
+          fontSize={{ base: "lg", md: "md" }} // Larger text on mobile
           _hover={{ textDecoration: 'underline', color: '#003366' }}
           onClick={() => navigate('/create-form')}
         >
-          Create Form {/* Reduced font size */}
+          Create Form
         </Link>
         <Button
           colorScheme="blue"
-          size="sm"
+          size={{ base: "md", md: "sm" }} // Slightly bigger button on mobile
           onClick={handleLogout}
           _hover={{ bg: '#003366' }}
         >
