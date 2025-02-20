@@ -62,60 +62,75 @@ const StepsSection = () => {
 };
 
 const FeaturesSection = () => {
-    return (
-      <Box bg="gray.50" py={20} fontFamily="Poppins">
-        <Container maxW="container.xl">
-          <Heading as="h3" size="2xl" textAlign="center" mb={12} fontFamily="Poppins">
-            Key Features of Formee
-          </Heading>
-  
-          <VStack spacing={12} align="stretch">
-            {/* Feature 1 */}
-            <HStack spacing={12} align="start" justify="space-between" w="full">
-              <Box flex="1">
-                <Heading size="lg" textAlign="left" bg="#C9E6F0" color="gray.700" p={6} borderRadius="lg" boxShadow="lg">
-                  Customizable Forms
-                </Heading>
-              </Box>
-              <Box flex="2" bg="#FBF8EF" p={8} borderRadius="lg" boxShadow="lg">
-                <Text fontSize="lg" lineHeight="tall" color="gray.700">
-                  Choose from various field types, themes, and templates to create forms that match your needs.
-                </Text>
-              </Box>
-            </HStack>
-  
-            {/* Feature 2 */}
-            <HStack spacing={12} align="start" justify="space-between" w="full">
-              <Box flex="2" bg="#FBF8EF" p={8} borderRadius="lg" boxShadow="lg">
-                <Text fontSize="lg" lineHeight="tall" color="gray.700">
-                  Track your submissions live, and view detailed analytics to get insights into your data.
-                </Text>
-              </Box>
-              <Box flex="1">
-                <Heading size="lg" textAlign="left" bg="#C9E6F0" color="gray.700" p={6} borderRadius="lg" boxShadow="lg">
+  return (
+    <Box bg="gray.50" py={20} fontFamily="Poppins">
+      <Container maxW="container.xl">
+        <Heading as="h3" size="2xl" textAlign="center" mb={12} fontFamily="Poppins">
+          Key Features of Formee
+        </Heading>
+
+        <VStack spacing={8} align="stretch">
+          {/* Feature 1 */}
+          <HStack 
+            spacing={6} 
+            align="start" 
+            w="full"
+            flexDirection={{ base: "column", md: "row" }} 
+          >
+            <Box flex="1" w={{ base: "100%", md: "auto" }}>
+              <Heading size="lg" textAlign="left" bg="#C9E6F0" color="gray.700" p={6} borderRadius="lg" boxShadow="lg">
+                Customizable Forms
+              </Heading>
+            </Box>
+            <Box flex="2" bg="#FBF8EF" p={8} borderRadius="lg" boxShadow="lg" w={{ base: "100%", md: "auto" }}>
+              <Text fontSize="lg" lineHeight="tall" color="gray.700">
+                Choose from various field types, themes, and templates to create forms that match your needs.
+              </Text>
+            </Box>
+          </HStack>
+
+          {/* Feature 2 */}
+          <HStack 
+            spacing={6} 
+            align="start" 
+            w="full"
+            flexDirection={{ base: "column", md: "row-reverse" }} 
+          >
+            <Box flex="1" w={{ base: "100%", md: "auto" }}>
+              <Heading size="lg" textAlign="left" bg="#C9E6F0" color="gray.700" p={6} borderRadius="lg" boxShadow="lg">
                 Analytics
-                </Heading>
-              </Box>
-            </HStack>
-  
-            {/* Feature 3 */}
-            <HStack spacing={12} align="start" justify="space-between" w="full">
-              <Box flex="1">
-                <Heading size="lg" textAlign="left" bg="#C9E6F0" color="gray.700" p={6} borderRadius="lg" boxShadow="lg">
-                  Seamless Integration
-                </Heading>
-              </Box>
-              <Box flex="2" bg="#FBF8EF" p={8} borderRadius="lg" boxShadow="lg">
-                <Text fontSize="lg" lineHeight="tall" color="gray.700">
-                  Integrate your forms with external tools and platforms for automatic data collection and processing.
-                </Text>
-              </Box>
-            </HStack>
-          </VStack>
-        </Container>
-      </Box>
-    );
-  };
+              </Heading>
+            </Box>
+            <Box flex="2" bg="#FBF8EF" p={8} borderRadius="lg" boxShadow="lg" w={{ base: "100%", md: "auto" }}>
+              <Text fontSize="lg" lineHeight="tall" color="gray.700">
+                Track your submissions live, and view detailed analytics to get insights into your data.
+              </Text>
+            </Box>
+          </HStack>
+
+          {/* Feature 3 */}
+          <HStack 
+            spacing={6} 
+            align="start" 
+            w="full"
+            flexDirection={{ base: "column", md: "row" }} 
+          >
+            <Box flex="1" w={{ base: "100%", md: "auto" }}>
+              <Heading size="lg" textAlign="left" bg="#C9E6F0" color="gray.700" p={6} borderRadius="lg" boxShadow="lg">
+                Seamless Integration
+              </Heading>
+            </Box>
+            <Box flex="2" bg="#FBF8EF" p={8} borderRadius="lg" boxShadow="lg" w={{ base: "100%", md: "auto" }}>
+              <Text fontSize="lg" lineHeight="tall" color="gray.700">
+                Integrate your forms with external tools and platforms for automatic data collection and processing.
+              </Text>
+            </Box>
+          </HStack>
+        </VStack>
+      </Container>
+    </Box>
+  );
+};
 
   
 const HomePage = () => {
