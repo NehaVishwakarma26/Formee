@@ -22,7 +22,7 @@ const Register = ({ setToken }) => {  // Accept setToken as a prop
         setError('');
 
         // Redirect to the Login page after successful registration
-        navigate('/'); // Navigate to /login after successful registration
+        navigate('/login'); // Navigate to /login after successful registration
       } else {
         setError('Registration failed! No token received');
       }

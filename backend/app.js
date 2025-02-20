@@ -17,7 +17,7 @@ const app = express();
 // Middleware
 app.use(bodyParser.json());
 
-// Enable CORS
+// Enable CORS to indicate which origins to be allowed to interact
 const allowedOrigins = ['http://localhost:3000', 'https://formeeformbuilder.netlify.app']; // Add your frontend's URL here
 
 const corsOptions = {
