@@ -111,9 +111,17 @@ const Dashboard = ({ token }) => {
           Forming your future, one submission at a time!
         </Text>
         {/* Align Create Form Button on the right */}
-        <Button onClick={() => navigate('/create-form')} colorScheme="blue">
-          Create New Form
-        </Button>
+        <Button 
+  onClick={() => navigate('/create-form')} 
+  colorScheme="blue"
+  fontSize={{ base: "xs", md: "sm" }} 
+  px={{ base: 4, md: 4 }}
+  whiteSpace="nowrap"
+  textOverflow="ellipsis" 
+>
+  Create Form
+</Button>
+
       </Flex>
 
       {/* Content */}

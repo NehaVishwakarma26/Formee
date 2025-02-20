@@ -115,20 +115,55 @@ const CreateForm = ({ token }) => {
       {/* Left Section - Form Fields Buttons */}
       <Box w="20%" position="sticky" top="10" align="start" fontFamily="Poppins">
         <VStack spacing={4} align="stretch">
-          <Button leftIcon={<AddIcon />} onClick={() => addField('text')} colorScheme="blue" width="full">
-           Text Field
+        <Button
+  leftIcon={<AddIcon />}
+  onClick={() => addField('text')}
+  colorScheme="blue"
+  width="full"
+  fontSize={{ base: "xs", md: "sm", lg: "md" }} // Smaller font on small screens
+  px={{ base: 6, md: 8, lg: 10 }} // Increase padding for small screens
+  py={{ base: 2, md: 3 }} // Increase padding vertically
+>           Text Field
           </Button>
-          <Button leftIcon={<AddIcon />} onClick={() => addField('number')} colorScheme="blue" width="full">
-           Number Field
+          <Button
+  leftIcon={<AddIcon />}
+  onClick={() => addField('number')}
+  colorScheme="blue"
+  width="full"
+  fontSize={{ base: "xs", md: "sm", lg: "md" }} // Smaller font on small screens
+  px={{ base: 6, md: 8, lg: 10 }} // Increase padding for small screens
+  py={{ base: 2, md: 3 }} // Increase padding vertically
+>           Number Field
           </Button>
-          <Button leftIcon={<AddIcon />} onClick={() => addField('date')} colorScheme="blue" width="full">
-            Date Picker
+          <Button
+  leftIcon={<AddIcon />}
+  onClick={() => addField('date')}
+  colorScheme="blue"
+  width="full"
+  fontSize={{ base: "xs", md: "sm", lg: "md" }} // Smaller font on small screens
+  px={{ base: 6, md: 8, lg: 10 }} // Increase padding for small screens
+  py={{ base: 2, md: 3 }} // Increase padding vertically
+>            Date Picker
           </Button>
-          <Button leftIcon={<AddIcon />} onClick={() => addField('select')} colorScheme="blue" width="full">
-             Dropdown
+          <Button
+  leftIcon={<AddIcon />}
+  onClick={() => addField('select')}
+  colorScheme="blue"
+  width="full"
+  fontSize={{ base: "xs", md: "sm", lg: "md" }} // Smaller font on small screens
+  px={{ base: 6, md: 8, lg: 10 }} // Increase padding for small screens
+  py={{ base: 2, md: 3 }} // Increase padding vertically
+>             Dropdown
           </Button>
-          <Button leftIcon={<AddIcon />} onClick={() => addField('radio')} colorScheme="blue" width="full">
-            Radio Buttons
+          <Button
+  leftIcon={<AddIcon />}
+  onClick={() => addField('radio')}
+  colorScheme="blue"
+  width="full"
+  fontSize={{ base: "xs", md: "sm", lg: "md" }} // Smaller font on small screens
+  px={{ base: 6, md: 8, lg: 10 }} // Increase padding for small screens
+  py={{ base: 2, md: 3 }} // Increase padding vertically
+>            Radio Buttons
           </Button>
         </VStack>
       </Box>
@@ -229,7 +264,16 @@ const CreateForm = ({ token }) => {
           <Button colorScheme="green" width="full" onClick={handleSubmit}>
             Save Form
           </Button>
-          <Button leftIcon={<DeleteIcon />} colorScheme="gray" width="full" onClick={() => window.location.reload()}>
+          <Button
+  leftIcon={<AddIcon />}
+  onClick={() => window.location.reload()}
+  colorScheme="blue"
+  width="full"
+  fontSize={{ base: "xs", md: "sm", lg: "md" }} // Smaller font on small screens
+  px={{ base: 6, md: 8, lg: 10 }} // Increase padding for small screens
+  py={{ base: 2, md: 3 }} // Increase padding vertically
+>
+          {/* <Button leftIcon={<DeleteIcon />} colorScheme="gray" width="full" onClick={() => window.location.reload()}> */}
             Clear Form
           </Button>
           {formLink && (
