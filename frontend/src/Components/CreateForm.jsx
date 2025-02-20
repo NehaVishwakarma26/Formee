@@ -123,7 +123,7 @@ const CreateForm = ({ token }) => {
   fontSize={{ base: "xs", md: "sm", lg: "md" }} // Smaller font on small screens
   px={{ base: 6, md: 8, lg: 10 }} // Increase padding for small screens
   py={{ base: 2, md: 3 }} // Increase padding vertically
->           Text Field
+>           Text 
           </Button>
           <Button
   leftIcon={<AddIcon />}
@@ -133,14 +133,14 @@ const CreateForm = ({ token }) => {
   fontSize={{ base: "xs", md: "sm", lg: "md" }} // Smaller font on small screens
   px={{ base: 6, md: 8, lg: 10 }} // Increase padding for small screens
   py={{ base: 2, md: 3 }} // Increase padding vertically
->           Number Field
+>           Number
           </Button>
           <Button
   leftIcon={<AddIcon />}
   onClick={() => addField('date')}
   colorScheme="blue"
   width="full"
-  fontSize={{ base: "xs", md: "sm", lg: "md" }} // Smaller font on small screens
+  fontSize={{ base: "10px", md: "sm", lg: "md" }} // Smaller font on small screens
   px={{ base: 6, md: 8, lg: 10 }} // Increase padding for small screens
   py={{ base: 2, md: 3 }} // Increase padding vertically
 >            Date Picker
@@ -160,10 +160,10 @@ const CreateForm = ({ token }) => {
   onClick={() => addField('radio')}
   colorScheme="blue"
   width="full"
-  fontSize={{ base: "xs", md: "sm", lg: "md" }} // Smaller font on small screens
+  fontSize={{ base: "10px", md: "sm", lg: "md" }} // Smaller font on small screens
   px={{ base: 6, md: 8, lg: 10 }} // Increase padding for small screens
   py={{ base: 2, md: 3 }} // Increase padding vertically
->            Radio Buttons
+>            Radio Button
           </Button>
         </VStack>
       </Box>
@@ -262,7 +262,7 @@ const CreateForm = ({ token }) => {
       <Box w="20%" position="sticky" top="10">
         <VStack spacing={4} align="stretch">
           <Button colorScheme="green" width="full" onClick={handleSubmit}>
-            Save Form
+            Save
           </Button>
           <Button
   leftIcon={<AddIcon />}
@@ -274,7 +274,7 @@ const CreateForm = ({ token }) => {
   py={{ base: 2, md: 3 }} // Increase padding vertically
 >
           {/* <Button leftIcon={<DeleteIcon />} colorScheme="gray" width="full" onClick={() => window.location.reload()}> */}
-            Clear Form
+            Clear
           </Button>
           {formLink && (
             <Box mt="4">
